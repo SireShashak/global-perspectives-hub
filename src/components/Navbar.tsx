@@ -48,15 +48,17 @@ const Navbar = () => {
             </div>
           </div>
 
-          <a href="#about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200">
-            About Me
-          </a>
+          {/* Navbar links */}
           <a href="#discussion" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200">
             Discussion
           </a>
           <a href="#schedule" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200">
             Schedule
           </a>
+          <a href="#about" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200">
+            About Me
+          </a>
+
           <Button size="sm" className="ml-2">Sign In</Button>
         </div>
 
@@ -80,6 +82,7 @@ const Navbar = () => {
             Topics
             <ChevronDown size={14} className={`transition-transform duration-200 ${mobileTopicsOpen ? "rotate-180" : ""}`} />
           </button>
+
           {mobileTopicsOpen && (
             <div className="pl-4 space-y-2">
               {topicItems.map((item) => (
@@ -94,12 +97,17 @@ const Navbar = () => {
               ))}
             </div>
           )}
+
           <a href="#discussion" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>
             Discussion
           </a>
           <a href="#schedule" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>
             Schedule
           </a>
+          <a href="#about" className="block text-sm font-medium text-muted-foreground hover:text-foreground" onClick={() => setMobileOpen(false)}>
+            About Me
+          </a>
+
           <Button size="sm" className="w-full">Sign In</Button>
         </div>
       )}
